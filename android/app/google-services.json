@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "374021905358",
+    "project_id": "marwa-d5115",
+    "storage_bucket": "marwa-d5115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374021905358:android:6cf391832549d9ae83699f",
+        "android_client_info": {
+          "package_name": "com.example.eduprime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjJewr2JqRQuxRh-gNRVYMst9vPMCysR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
