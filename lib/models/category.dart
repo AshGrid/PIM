@@ -1,34 +1,44 @@
+enum Level { beginner, intermediate, advanced }
+
 class Category {
-  String thumbnail;
-  String name;
-  int noOfCourses;
+  final String id;
+  final String cat;
+  final Level level;
 
   Category({
-    required this.name,
-    required this.noOfCourses,
-    required this.thumbnail,
+    required this.id,
+    required this.cat,
+    required this.level,
   });
-}
 
-List<Category> categoryList = [
-  Category(
-    name: 'Development',
-    noOfCourses: 55,
-    thumbnail: 'assets/icons/laptop.jpg',
-  ),
-  Category(
-    name: 'Accounting',
-    noOfCourses: 20,
-    thumbnail: 'assets/icons/accounting.jpg',
-  ),
-  Category(
-    name: 'Photography',
-    noOfCourses: 16,
-    thumbnail: 'assets/icons/photography.jpg',
-  ),
-  Category(
-    name: 'Product Design',
-    noOfCourses: 25,
-    thumbnail: 'assets/icons/design.jpg',
-  ),
-];
+  // Convert JSON to Dart object
+  factory Category.fromJson(Map<String, dynamic> json) {
+    return Category(
+      id: json['_id'],
+      cat: json['cat'],
+      level: _levelFromString(json['level']),
+    );
+  }
+
+  // Convert Dart object to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'cat': cat,
+      'level': level.name,
+    };
+  }
+
+  // Helper to convert string to enum
+  static Level _levelFromString(String level) {
+    switch (level) {
+      case 'beginner':
+        return Level.beginner;
+      case 'intermediate':
+        return Level.intermediate;
+      case 'advanced':
+        return Level.advanced;
+      default:
+        throw Exception('Unknown level: $level');
+    }
+  }
+}

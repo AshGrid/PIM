@@ -1,10 +1,12 @@
 class Quiz {
+  final String id;
   final String question;
   final String correctAnswer;
   final List<String> choices;
 
 
   Quiz({
+    required this.id,
     required this.question,
     required this.correctAnswer,
     required this.choices,
@@ -13,6 +15,7 @@ class Quiz {
 
   factory Quiz.fromJson(Map<String, dynamic> json) {
     return Quiz(
+      id: json['_id'],
       question: json['question'],
       correctAnswer: json['correct_answer'],
       choices: List<String>.from(json['choices']),
