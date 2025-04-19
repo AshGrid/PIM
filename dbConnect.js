@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 //mongoose.connect('mongodb+srv://ayoub1:ayoub1@pdm.vwwjbxe.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('mongodb://localhost:27017/gemini');
+mongoose.connect('mongodb://127.0.0.1:27017/gemini');
 
 const connection = mongoose.connection;
 
